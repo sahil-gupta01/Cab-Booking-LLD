@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Locale;
 
-//@RestController
+@RestController
 public class CabController {
 
     private CabManager cabManager;
