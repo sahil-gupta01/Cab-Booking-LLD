@@ -8,13 +8,16 @@ import CarBooking.demo.models.Rider;
 import CarBooking.demo.models.Trip;
 import CarBooking.demo.repositories.RiderManager;
 import CarBooking.demo.repositories.TripManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public class RiderController {
     private RiderManager riderManager;
     private TripManager tripManager;
 
+    @Autowired
     public RiderController(RiderManager riderManager, TripManager tripManager) {
         this.riderManager = riderManager;
         this.tripManager = tripManager;

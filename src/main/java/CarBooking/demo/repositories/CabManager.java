@@ -5,12 +5,13 @@ import CarBooking.demo.exceptions.CabNotFoundException;
 import CarBooking.demo.models.Cab;
 import CarBooking.demo.models.CarStatus;
 import CarBooking.demo.models.Location;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Repository
 public class CabManager {
     Map<String, Cab> cabs;
 
@@ -44,6 +45,7 @@ public class CabManager {
     public List<Cab> getCabsAvailable(Location startingPoint, Double distance){
         List<Cab> cabsAvailable = new ArrayList<>();
         for(Cab cab : cabs.values()){
+            System.out.println("check  " + cab.getCurrLocation() );
             if(CarStatus.AVAILABLE.equals(cab.getCarStatus()) && cab.getCurrLocation().distance(startingPoint) <= distance){
                 cabsAvailable.add(cab);
             }

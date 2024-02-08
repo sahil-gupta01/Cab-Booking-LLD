@@ -3,10 +3,11 @@ package CarBooking.demo.repositories;
 import CarBooking.demo.exceptions.RiderAlreadyRegisterException;
 import CarBooking.demo.exceptions.RiderNotFoundException;
 import CarBooking.demo.models.Rider;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
-
+@Repository
 public class RiderManager {
     Map<String, Rider> riderList;
 

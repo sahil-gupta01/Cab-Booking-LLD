@@ -4,13 +4,14 @@ import CarBooking.demo.exceptions.NoCabAvailableException;
 import CarBooking.demo.models.*;
 import CarBooking.demo.strategies.CabFindingStrategy;
 import CarBooking.demo.strategies.PriceCalculatingStrategy;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
+@Repository
 public class TripManager {
     public static final Double MAX_ALLOWED_TRIP_MATCHING_DISTANCE = 10.0;
     Map<String, List<Trip>> trips;
